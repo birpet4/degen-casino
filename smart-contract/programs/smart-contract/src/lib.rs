@@ -57,6 +57,7 @@ pub struct JoinRaffle<'info> {
     #[account(mut)]
     pub user: Signer<'info>,
     pub system_program: Program<'info, System>,
+    /// CHECK: This is safe because we will perform necessary checks in the program logic
     #[account(mut)]
     pub winner: AccountInfo<'info>,
 }
