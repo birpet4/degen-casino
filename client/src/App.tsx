@@ -1,13 +1,12 @@
 import { useMemo } from 'react'
 import './App.css'
-import { clusterApiUrl } from '@solana/web3.js';
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import JoinRaffle from './components/JoinRaffle';
 
 function App() {
-  const endpoint = useMemo(() => clusterApiUrl('devnet'), []);
+  const endpoint = useMemo(() => 'http://127.0.0.1:8899', []);
   const wallets = useMemo(() => [new PhantomWalletAdapter()], []);
 
   return (
